@@ -83,3 +83,7 @@ C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\ob
 C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\obj\Debug\infracci.9FDF22F3.Up2Date
 C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\obj\Debug\infraccionesITM.dll
 C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\obj\Debug\infraccionesITM.pdb
+C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\bin\EntityFramework.dll
+C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\bin\EntityFramework.SqlServer.dll
+C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\bin\EntityFramework.xml
+C:\Users\super\OneDrive\Documentos\aplicacion\infraccionesITM\infraccionesITM\bin\EntityFramework.SqlServer.xml
