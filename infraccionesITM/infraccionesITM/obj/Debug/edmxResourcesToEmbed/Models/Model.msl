@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBExamenModelStoreContainer" CdmEntityContainer="DBExamenEntities1">
+    <EntitySetMapping Name="FotoInfraccions">
+      <EntityTypeMapping TypeName="DBExamenModel.FotoInfraccion">
+        <MappingFragment StoreEntitySet="FotoInfraccion">
+          <ScalarProperty Name="idFoto" ColumnName="idFoto" />
+          <ScalarProperty Name="NombreFoto" ColumnName="NombreFoto" />
+          <ScalarProperty Name="idInfraccion" ColumnName="idInfraccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Infraccions">
+      <EntityTypeMapping TypeName="DBExamenModel.Infraccion">
+        <MappingFragment StoreEntitySet="Infraccion">
+          <ScalarProperty Name="idFotoMulta" ColumnName="idFotoMulta" />
+          <ScalarProperty Name="PlacaVehiculo" ColumnName="PlacaVehiculo" />
+          <ScalarProperty Name="FechaInfraccion" ColumnName="FechaInfraccion" />
+          <ScalarProperty Name="TipoInfraccion" ColumnName="TipoInfraccion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vehiculoes">
+      <EntityTypeMapping TypeName="DBExamenModel.Vehiculo">
+        <MappingFragment StoreEntitySet="Vehiculo">
+          <ScalarProperty Name="Placa" ColumnName="Placa" />
+          <ScalarProperty Name="TipoVehiculo" ColumnName="TipoVehiculo" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

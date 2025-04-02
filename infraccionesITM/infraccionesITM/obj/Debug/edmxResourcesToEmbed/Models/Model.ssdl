@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBExamenModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="FotoInfraccion">
+    <Key>
+      <PropertyRef Name="idFoto" />
+    </Key>
+    <Property Name="idFoto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreFoto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idInfraccion" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Infraccion">
+    <Key>
+      <PropertyRef Name="idFotoMulta" />
+    </Key>
+    <Property Name="idFotoMulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlacaVehiculo" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FechaInfraccion" Type="datetime" Nullable="false" />
+    <Property Name="TipoInfraccion" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vehiculo">
+    <Key>
+      <PropertyRef Name="Placa" />
+    </Key>
+    <Property Name="Placa" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TipoVehiculo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Marca" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Color" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_FotoInfraccion_Infraccion">
+    <End Role="Infraccion" Type="Self.Infraccion" Multiplicity="1" />
+    <End Role="FotoInfraccion" Type="Self.FotoInfraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Infraccion">
+        <PropertyRef Name="idFotoMulta" />
+      </Principal>
+      <Dependent Role="FotoInfraccion">
+        <PropertyRef Name="idInfraccion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Infraccion_Vehiculo">
+    <End Role="Vehiculo" Type="Self.Vehiculo" Multiplicity="1" />
+    <End Role="Infraccion" Type="Self.Infraccion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vehiculo">
+        <PropertyRef Name="Placa" />
+      </Principal>
+      <Dependent Role="Infraccion">
+        <PropertyRef Name="PlacaVehiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBExamenModelStoreContainer">
+    <EntitySet Name="FotoInfraccion" EntityType="Self.FotoInfraccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Infraccion" EntityType="Self.Infraccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vehiculo" EntityType="Self.Vehiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FotoInfraccion_Infraccion" Association="Self.FK_FotoInfraccion_Infraccion">
+      <End Role="Infraccion" EntitySet="Infraccion" />
+      <End Role="FotoInfraccion" EntitySet="FotoInfraccion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Infraccion_Vehiculo" Association="Self.FK_Infraccion_Vehiculo">
+      <End Role="Vehiculo" EntitySet="Vehiculo" />
+      <End Role="Infraccion" EntitySet="Infraccion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
