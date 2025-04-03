@@ -11,13 +11,15 @@ namespace infraccionesITM.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using Newtonsoft.Json;
+
     public partial class FotoInfraccion
     {
         public int idFoto { get; set; }
         public string NombreFoto { get; set; }
         public int idInfraccion { get; set; }
-    
+
+        [JsonIgnore]
         public virtual Infraccion Infraccion { get; set; }
     }
 }
